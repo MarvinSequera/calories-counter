@@ -1,0 +1,22 @@
+{
+  "name": "calories-counter-api",
+  "version": "1.0.0",
+  "description": "Node API to count calories GUI",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Marvin Sequera",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "node": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
