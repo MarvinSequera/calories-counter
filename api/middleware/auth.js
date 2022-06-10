@@ -10,7 +10,6 @@ const verifyToken = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, jwtToken)
-        console.log(decoded)
     } catch {
         return res.status(401).send("Invalid Token")
     }
