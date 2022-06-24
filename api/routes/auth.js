@@ -18,17 +18,17 @@ routerAuth.post('/singup', async (req, res) => {
         fat,
     } = req.body
     const expectedValues = ['name','email','password','height','weight','age','waist','fat',]
-
-    expectedValues.map(key => {
-        if (!req.body[key]) {
-            res.status(400).send(`Data incomplete missing ${key}`)
-            return
-        }
-    })
-
-    const userCollection = db.collection('users')
-
+    // TODO: Apply fix for error handle
     try {
+        expectedValues.map(key => {
+            if (!req.body[key]) {
+                res.status(400).send(`Data incomplete missing ${key}`)
+                return
+            }
+        })
+
+        const userCollection = db.collection('users')
+
         const userExist = await userCollection.findOne({ email })
 
         if (userExist) {
