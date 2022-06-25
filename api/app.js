@@ -3,6 +3,7 @@ import 'dotenv/config'
 import { routerIndex } from './routes/index.js'
 import { routerAuth } from './routes/auth.js'
 import { routerFoods } from './routes/foods.js'
+import routerIntake from './routes/intake.js'
 import { MongoClient } from 'mongodb'
 const app = express()
 const nameDB = process.env.DB_NAME
@@ -30,6 +31,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(routerIndex)
 app.use(routerAuth)
 app.use(routerFoods)
+app.use(routerIntake)
 
 app.listen(port, () => console.log(`Listening on Port ${port}`))
 
